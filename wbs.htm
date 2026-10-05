@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WBS 3.0 Dashboard</title>
+
+https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    color:#1e293b;
+}
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+.sidebar{
+    width:260px;
+    background:#111827;
+    color:white;
+    padding:30px 20px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:40px;
+}
+
+.logo span{
+    color:#22c55e;
+}
+
+.nav-item{
+    padding:14px;
+    margin-bottom:8px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.nav-item:hover{
+    background:#1f2937;
+}
+
+.nav-item.active{
+    background:#22c55e;
+    color:#111827;
+    font-weight:600;
+}
+
+.main{
+    flex:1;
+    padding:30px;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.user{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.avatar{
+    width:45px;
+    height:45px;
+    background:#22c55e;
+    border-radius:50%;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:24px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+
+.stat-number{
+    font-size:28px;
+    font-weight:700;
+    margin-top:10px;
+}
+
+.content-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+}
+
+.next-action{
+    background:linear-gradient(
+    135deg,
+    #22c55e,
+    #16a34a);
+    color:white;
+}
+
+.next-action h2{
+    margin-bottom:15px;
+}
+
+.next-action p{
+    opacity:0.95;
+    line-height:1.6;
+}
+
+.btn{
+    margin-top:20px;
+    padding:14px 24px;
+    background:white;
+    color:#16a34a;
+    border:none;
+    border-radius:12px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.ai-box textarea{
+    width:100%;
+    height:120px;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid #ddd;
+    resize:none;
+    margin-top:15px;
+}
+
+.ai-btn{
+    width:100%;
+    background:#22c55e;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:12px;
+    margin-top:15px;
+    cursor:pointer;
+}
+
+.section{
+    margin-top:25px;
+}
+
+.progress-bar{
+    width:100%;
+    height:12px;
+    background:#e5e7eb;
+    border-radius:999px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+.progress-fill{
+    width:72%;
+    height:100%;
+    background:#22c55e;
+}
+
+.journey{
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+    gap:10px;
+}
+
+.step{
+    flex:1;
+    text-align:center;
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    font-size:13px;
+}
+
+.complete{
+    border:2px solid #22c55e;
+}
+
+.current{
+    border:2px solid #f59e0b;
+}
+
+.assets li{
+    list-style:none;
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+}
+
+.assets li:last-child{
+    border-bottom:none;
+}
+
+@media(max-width:1000px){
+
+.grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.content-grid{
+    grid-template-columns:1fr;
+}
+
+.sidebar{
+    display:none;
+}
+
+}
+
+@media(max-width:700px){
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            WBS <span>3.0</span>
+        </div>
+
+        <div class="nav-item active">🏠 Dashboard</div>
+        <div class="nav-item">🤖 AI Coach</div>
+        <div class="nav-item">🧠 Business Brain</div>
+        <div class="nav-item">🎯 Offer Builder</div>
+        <div class="nav-item">📱 Content Builder</div>
+        <div class="nav-item">✉️ Email Builder</div>
+        <div class="nav-item">💰 Sales Assistant</div>
+        <div class="nav-item">📂 Asset Library</div>
+        <div class="nav-item">📖 Knowledge Base</div>
+        <div class="nav-item">⚙️ Settings</div>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="topbar">
+
+            <div>
+                <h1>Welcome Back, Victor 👋</h1>
+                <p>Your business is progressing well.</p>
+            </div>
+
+            <div class="user">
+                <div class="avatar"></div>
+                <strong>Victor</strong>
+            </div>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <small>Business Readiness</small>
+                <div class="stat-number">72%</div>
+            </div>
+
+            <div class="card">
+                <small>Assets Created</small>
+                <div class="stat-number">24</div>
+            </div>
+
+            <div class="card">
+                <small>Tasks Completed</small>
+                <div class="stat-number">18</div>
+            </div>
+
+            <div class="card">
+                <small>Goal Progress</small>
+                <div class="stat-number">61%</div>
+            </div>
+
+        </div>
+
+        <div class="content-grid">
+
+            <div>
+
+                <div class="card next-action">
+
+                    <h2>🔥 Highest Impact Action</h2>
+
+                    <h3>Build Your Sales Funnel</h3>
+
+                    <p>
+                        You already have your offer, messaging and content plan.
+                        The biggest bottleneck right now is converting visitors
+                        into leads and booked calls.
+                    </p>
+
+                    <button class="btn">
+                        Start With AI
+                    </button>
+
+                </div>
+
+                <div class="card section">
+
+                    <h2>Business Journey</h2>
+
+                    <div class="journey">
+
+                        <div class="step complete">
+                            ✅ Idea
+                        </div>
+
+                        <div class="step complete">
+                            ✅ Offer
+                        </div>
+
+                        <div class="step complete">
+                            ✅ Content
+                        </div>
+
+                        <div class="step current">
+                            🔥 Funnel
+                        </div>
+
+                        <div class="step">
+                            Sales
+                        </div>
+
+                        <div class="step">
+                            Scale
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="card section">
+
+                    <h2>Business Health Score</h2>
+
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+
+                    <p style="margin-top:15px;">
+                        Offer Complete ✅ <br>
+                        Content Complete ✅ <br>
+                        Funnel Missing ❌ <br>
+                        Lead Magnet Missing ❌
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="card ai-box">
+
+                    <h2>🤖 Ask WBS AI</h2>
+
+                    <textarea placeholder="What are you stuck on?"></textarea>
+
+                    <button class="ai-btn">
+                        Ask AI Coach
+                    </button>
+
+                </div>
+
+                <div class="card section">
+
+                    <h2>Recent Assets</h2>
+
+                    <ul class="assets">
+
+                        <li>✅ Offer Framework V2</li>
+                        <li>✅ 30 Day Content Plan</li>
+                        <li>✅ Welcome Email Sequence</li>
+                        <li>✅ Meta Ad Campaign</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="card section">
+
+                    <h2>Quick Actions</h2>
+
+                    <br>
+
+                    <button class="ai-btn">Create Offer</button>
+                    <button class="ai-btn">Create Content</button>
+                    <button class="ai-btn">Create Emails</button>
+                    <button class="ai-btn">Create Sales Script</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

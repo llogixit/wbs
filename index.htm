@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WBS 3.0 Onboarding</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:30px;
+}
+
+.container{
+width:100%;
+max-width:900px;
+background:#111827;
+border-radius:24px;
+padding:40px;
+box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+.logo{
+text-align:center;
+font-size:32px;
+font-weight:700;
+margin-bottom:20px;
+}
+
+.logo span{
+color:#22c55e;
+}
+
+.progress{
+width:100%;
+height:10px;
+background:#374151;
+border-radius:50px;
+overflow:hidden;
+margin-bottom:40px;
+}
+
+.progress-fill{
+width:20%;
+height:100%;
+background:#22c55e;
+}
+
+.step{
+display:block;
+}
+
+
+
+h1{
+font-size:36px;
+margin-bottom:10px;
+}
+
+.subtitle{
+color:#94a3b8;
+margin-bottom:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.form-group{
+margin-bottom:20px;
+}
+
+label{
+display:block;
+margin-bottom:8px;
+font-weight:600;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:#1f2937;
+color:white;
+font-size:15px;
+}
+
+.hide{
+      display:none;
+}
+
+textarea{
+height:120px;
+resize:none;
+}
+
+.actions{
+margin-top:30px;
+display:flex;
+justify-content:space-between;
+}
+
+.btn{
+padding:14px 28px;
+border:none;
+border-radius:12px;
+font-weight:600;
+cursor:pointer;
+}
+
+.btn-secondary{
+background:#374151;
+color:white;
+}
+
+.btn-primary{
+background:#22c55e;
+color:#111827;
+}
+
+.highlight{
+background:#0b1220;
+padding:20px;
+border-radius:16px;
+margin-top:20px;
+border:1px solid #1f2937;
+}
+
+.highlight h3{
+margin-bottom:10px;
+color:#22c55e;
+}
+
+@media(max-width:768px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+h1{
+font-size:28px;
+}
+
+
+
+}
+
+.checkbox-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.checkbox-grid label{
+    background:#1f2937;
+    padding:18px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+WBS <span>3.0</span>
+</div>
+
+<div class="progress">
+<div class="progress-fill"></div>
+</div>
+
+<div>
+
+<div class="step" id="step_1">
+
+<h1>Let's Build Your Business Brain</h1>
+
+<p class="subtitle">
+Answer a few questions and WBS AI will create your personalized growth roadmap.
+</p>
+
+<div class="grid">
+
+<div class="form-group">
+<label>Business Name</label>
+<input type="text" placeholder="Revphlo">
+</div>
+
+<div class="form-group">
+<label>Industry</label>
+<select>
+<option>Select Industry</option>
+<option>Coaching</option>
+<option>Consulting</option>
+<option>Agency</option>
+<option>Ecommerce</option>
+<option>SaaS</option>
+<option>Health & Wellness</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Current Monthly Revenue</label>
+<input type="text" placeholder="$5,000">
+</div>
+
+<div class="form-group">
+<label>Revenue Goal</label>
+<input type="text" placeholder="$20,000">
+</div>
+
+
+</div>
+</div>
+
+
+<div class="step  hide"  id="step_2">
+
+    <h1>Your Core Offer</h1>
+
+    <p class="subtitle">
+        Tell us what transformation you provide.
+    </p>
+
+    <div class="grid">
+
+        <div class="form-group">
+            <label>What Do You Sell?</label>
+            <input type="text"
+                   placeholder="Business Coaching Program">
+        </div>
+
+        <div class="form-group">
+            <label>Offer Price</label>
+            <input type="text"
+                   placeholder="$2,000">
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label>How Is It Delivered?</label>
+
+        <select>
+            <option>Choose Delivery Method</option>
+            <option>1:1 Coaching</option>
+            <option>Group Coaching</option>
+            <option>Online Course</option>
+            <option>Consulting</option>
+            <option>Agency Service</option>
+            <option>Membership</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+
+        <label>What Transformation Do You Help Clients Achieve?</label>
+
+        <textarea
+            placeholder="Help coaches get their first 10 paying clients">
+        </textarea>
+
+    </div>
+</div>
+
+
+<div class="step hide"  id="step_3">
+
+    <h1>Your Ideal Client</h1>
+
+    <p class="subtitle">
+        The more we understand your audience, the better the AI becomes.
+    </p>
+
+    <div class="form-group">
+
+        <label>Who Do You Help?</label>
+
+        <textarea
+            placeholder="Health coaches who struggle to consistently attract clients">
+        </textarea>
+
+    </div>
+
+    <div class="form-group">
+
+        <label>Biggest Pain Points</label>
+
+        <textarea
+            placeholder="No leads, inconsistent sales, lack of confidence">
+        </textarea>
+
+    </div>
+
+    <div class="form-group">
+
+        <label>Desired Outcome</label>
+
+        <textarea
+            placeholder="A predictable coaching business generating $10k+ monthly">
+        </textarea>
+
+    </div>
+
+</div>
+
+<div class="step hide"  id="step_4">
+
+    <h1>What's Holding You Back?</h1>
+
+    <p class="subtitle">
+        Choose all bottlenecks currently affecting your growth.
+    </p>
+
+    <div class="checkbox-grid">
+
+        <label>
+            <input type="checkbox">
+            Lead Generation
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Sales Calls
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Messaging
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Offer Clarity
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Meta Ads
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Content Creation
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Productivity
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Confidence
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Systems & Automation
+        </label>
+
+        <label>
+            <input type="checkbox">
+            Team & Delegation
+        </label>
+
+    </div>
+
+</div>
+
+<div class="step hide" id="step_5">
+
+    <h1>Your Next 12 Months</h1>
+
+    <p class="subtitle">
+        Let's define what success looks like.
+    </p>
+
+    <div class="grid">
+
+        <div class="form-group">
+
+            <label>Revenue Goal</label>
+
+            <input
+                type="text"
+                placeholder="$100,000"
+            >
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Clients Per Month</label>
+
+            <input
+                type="number"
+                placeholder="10"
+            >
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        <label>Your Biggest Goal</label>
+
+        <textarea
+            placeholder="Create a business that allows me to work 4 days a week while consistently generating leads."
+        ></textarea>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<div class="highlight">
+
+<h3 id="show_step">Step 1 of 5</h3>
+
+<p>
+We'll use this information to personalize your AI coach and determine the fastest path to your next level.
+</p>
+
+</div>
+
+<div class="actions">
+
+<button class="btn btn-secondary" id="back_button">
+Back
+</button>
+
+<button class="btn btn-primary" id="continue_button">
+Continue →
+</button>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<script>
+var step = 1;
+
+function stepAction(){
+    $('.step').each(function(index, element) {
+    // 'this' refers to the current raw DOM element
+    // $(this) wraps it as a jQuery object
+  
+    if(!$(this).attr("id").includes("_"+step)){
+        $(this).css("display","none");
+    }
+    else{
+             $(this).css("display","block");
+    }
+
+    $("#show_step").text("Step "+step+" of 5");
+    
+    //console.log(index, $(this).text());
+});
+}
+
+$("#continue_button").click(function(){
+step +=1;
+stepAction();
+
+
+});
+
+$("#back_button").click(function(){
+    if(step>1){
+        step -=1;
+        stepAction();
+    }
+
+});
+
+
+    </script>
+</html>
